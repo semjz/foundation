@@ -1,9 +1,48 @@
 app_name = "foundation"
-app_title = "foundation"
+app_title = "Foundation"
 app_publisher = "Saman Malakjan"
 app_description = "This app is the foundation and should be installed before all apps"
 app_email = "saman.malakjan@gmail.com"
 app_license = "mit"
+
+required_apps = ["erpnext"]
+
+doc_events = {
+    "Employee": {
+        "before_insert": [
+            "foundation.employee_hooks.identity.enforce_business_keys",
+            "foundation.employee_hooks.numbering.assign_employee_display_number",
+            "foundation.employee_hooks.org_role.require_org_role_fields",
+        ],
+        "validate": [
+            "foundation.employee_hooks.org_role.require_org_role_fields",
+            "foundation.employee_hooks.identity.recheck_uniqueness",
+            "foundation.employee_hooks.payroll.compute_payroll_flags"
+        ],
+        "before_save": [
+            "foundation.employee_hooks.immutability.lock_immutable_identifiers",
+            "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy"
+        ],
+        "after_insert": [
+            "foundation.employee_hooks.create_user.create_user_and_permission",
+            "foundation.employee_hooks.checklist.employee_after_insert",
+        ],
+    },
+    "File": {
+        "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
+        "after_insert": "foundation.employee_hooks.checklist.file_after_insert",
+        "after_delete": "foundation.employee_hooks.checklist.file_after_delete",
+    },
+}
+
+fixtures = [
+    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","SITE"]]]},
+    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","SITE"]]]},
+    {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","SITE","Customer"]]]},
+    {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","SITE"]]]},
+    {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","SITE"]]]},
+]
+
 
 # Apps
 # ------------------

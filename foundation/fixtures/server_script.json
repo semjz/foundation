@@ -1,0 +1,40 @@
+[
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "Before Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-10-31 09:12:41.166726",
+  "module": "Transport",
+  "name": "before_save_employee",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Employee",
+  "script": "\nALLOWED_MIME = {\"application/pdf\", \"image/jpeg\", \"image/png\"}\nALLOWED_EXT  = (\".pdf\", \".jpg\", \".jpeg\", \".png\")\n\n\ndef before_save(doc, method):\n    # 1) Required attachment present\n    if not doc.national_id_scan:\n        frappe.throw(\"National ID Scan is required.\")\n\n    # 2) Find the File linked to this field\n    files = frappe.get_all(\n        \"File\",\n        filters={\n            \"attached_to_doctype\": \"Employee\",\n            \"attached_to_name\": doc.name,\n            \"attached_to_field\": \"national_id_scan\",\n        },\n        fields=[\"name\", \"is_private\", \"mime_type\", \"file_name\", \"content_hash\"]\n    )\n    if not files:\n        frappe.throw(\"Upload the National ID to the field (don’t paste a URL).\")\n    f = files[0]\n\n    # 3) Enforce privacy & type (defense in depth)\n    if not f.is_private:\n        frappe.throw(\"National ID files must be Private.\")\n    fn = (f.file_name or \"\").lower()\n    mime_ok = f.mime_type in ALLOWED_MIME if f.mime_type else False\n    ext_ok  = fn.endswith(ALLOWED_EXT)\n    if not (mime_ok or ext_ok):\n        frappe.throw(\"Only PDF, JPG, JPEG, or PNG is allowed for National ID Scan.\")\n\n    # 4) National code algorithm (if you have such a field)\n    # Adjust fieldname if different, e.g., doc.national_code or doc.personal_id\n    if getattr(doc, \"national_code\", None):\n        ok_iran_national_code = frappe.call(\"transport.transport.api.validate_helpers.validate_iran_national_code\",\n                                             code=doc.national_code or \"\")\n        if not ok_iran_national_code:\n            frappe.throw(\"National Code is invalid. Please check the 10-digit number.\")\n\n    # 5) Optional: block duplicate file across employees (exact same bytes)\n    if f.get(\"content_hash\"):\n        dup = frappe.get_all(\n            \"File\",\n            filters={\n                \"attached_to_doctype\": \"Employee\",\n                \"attached_to_field\": \"national_id_scan\",\n                \"content_hash\": f.content_hash,\n                \"attached_to_name\": [\"!=\", doc.name],\n            },\n            pluck=\"attached_to_name\"\n        )\n        if dup:\n            frappe.throw(\"This exact file is already attached to another Employee.\")\n",
+  "script_type": "DocType Event"
+ },
+ {
+  "allow_guest": 0,
+  "api_method": "validate_employee_payroll",
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "Before Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-10-30 17:15:40.794830",
+  "module": "Transport",
+  "name": "hrlite.validate_employee_payroll",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Employee",
+  "script": "# Returns issues for an Employee without touching the doc.\n# URL (once saved): /api/method/hrlite.validate_employee_payroll\n\nimport re, frappe\n\nREQUIRED = [\n    \"passport_number\", \"education\", \"custom_contract_type\", \"bank_name\",\n    \"bank_ac_no\", \"custom_shaba_no\", \"marital_status\",\n    \"emergency_phone_number\", \"custom_latest_qualification_scan\",\n]\n\ndef label(fn):\n    meta = frappe.get_meta(\"Employee\")\n    for df in meta.fields:\n        if df.fieldname == fn:\n            return df.label or fn\n    return fn\n\ndef is_valid_sheba(v):\n    if not v: return False\n    s = v.replace(\" \", \"\").upper()\n    if not (s.startswith(\"IR\") and len(s) == 26): return False\n    t = s[4:] + s[:4]\n    n = \"\".join(str(ord(c)-55) if c.isalpha() else c for c in t)\n    r = 0\n    for ch in n: r = (r*10 + int(ch)) % 97\n    return r == 1\n\ndef is_phone(v): return bool(v) and re.fullmatch(r\"\\+?\\d{8,15}\", v.replace(\" \", \"\"))\n\ndef file_ok(url, emp):\n    if not url: return False\n    return bool(frappe.db.exists(\"File\", {\"file_url\": url, \"attached_to_doctype\": \"Employee\", \"attached_to_name\": emp}))\n\n@frappe.whitelist()\ndef validate_employee_payroll(employee: str):\n    emp = frappe.get_doc(\"Employee\", employee)\n    missing, invalid = [], []\n\n    # presence\n    for f in REQUIRED:\n        val = emp.get(f) if f != \"education\" else (emp.education or [])\n        if not val:\n            missing.append(label(f))\n\n    # format checks (only if present)\n    if emp.get(\"custom_shaba_no\") and not is_valid_sheba(emp.custom_shaba_no):\n        invalid.append(label(\"custom_shaba_no\"))\n    if emp.get(\"bank_ac_no\") and not re.fullmatch(r\"\\d{6,24}\", str(emp.bank_ac_no)):\n        invalid.append(label(\"bank_ac_no\"))\n    if emp.get(\"emergency_phone_number\") and not is_phone(emp.emergency_phone_number):\n        invalid.append(label(\"emergency_phone_number\"))\n    if emp.get(\"custom_latest_qualification_scan\") and not file_ok(emp.custom_latest_qualification_scan, emp.name):\n        invalid.append(label(\"custom_latest_qualification_scan\"))\n\n    return {\"ok\": (not missing and not invalid), \"missing\": missing, \"invalid\": invalid}\n",
+  "script_type": "API"
+ }
+]
