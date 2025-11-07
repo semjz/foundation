@@ -28,6 +28,10 @@ doc_events = {
             "foundation.employee_hooks.checklist.employee_after_insert",
         ],
     },
+    "Customer": {
+        "after_insert": "foundation.customer_hooks.portal.ensure_user_and_permission",
+        "validate": "foundation.customer_hooks.customer_rules.validate_by_tier"
+    },
     "File": {
         "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
         "after_insert": "foundation.employee_hooks.checklist.file_after_insert",
@@ -41,6 +45,7 @@ fixtures = [
     {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","SITE","Customer"]]]},
     {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","SITE"]]]},
     {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","SITE"]]]},
+    {"dt":"Role","filters":[["role_name","in",["Customer"]]]}
 ]
 
 
