@@ -17,11 +17,12 @@ doc_events = {
         "validate": [
             "foundation.employee_hooks.org_role.require_org_role_fields",
             "foundation.employee_hooks.identity.recheck_uniqueness",
-            "foundation.employee_hooks.payroll.compute_payroll_flags"
+            "foundation.employee_hooks.payroll.compute_payroll_flags",
+            "foundation.jalali_hooks.conversion.employee_validate"
         ],
         "before_save": [
             "foundation.employee_hooks.immutability.lock_immutable_identifiers",
-            "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy"
+            # "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy"
         ],
         "after_insert": [
             "foundation.employee_hooks.create_user.create_user_and_permission",
@@ -30,7 +31,10 @@ doc_events = {
     },
     "Customer": {
         "after_insert": "foundation.customer_hooks.portal.ensure_user_and_permission",
-        "validate": "foundation.customer_hooks.customer_rules.validate_by_tier"
+        "validate": [
+            "foundation.customer_hooks.customer_business_rules.validate_customer_business_rules",
+            "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules"
+            ]
     },
     "File": {
         "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
@@ -40,12 +44,12 @@ doc_events = {
 }
 
 fixtures = [
-    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","SITE"]]]},
-    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","SITE"]]]},
-    {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","SITE","Customer"]]]},
-    {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","SITE"]]]},
-    {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","SITE"]]]},
-    {"dt":"Role","filters":[["role_name","in",["Customer"]]]}
+    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","Customer Site"]]]},
+    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","Customer Site"]]]},
+    {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","Customer Site","Customer","Service Window","Waste Pattern"]]]},
+    {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","Customer Site"]]]},
+    {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","Customer Site"]]]},
+    {"dt":"Role","filters":[["role_name","in",["Customer, Employee"]]]}
 ]
 
 
@@ -76,8 +80,8 @@ fixtures = [
 # web_include_css = "/assets/foundation/css/foundation.css"
 # web_include_js = "/assets/foundation/js/foundation.js"
 
-# include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "foundation/public/scss/website"
+# include custom scss in every webCustomer Site theme (without file extension ".scss")
+# webCustomer Site_theme_scss = "foundation/public/scss/webCustomer Site"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -100,10 +104,10 @@ fixtures = [
 # Home Pages
 # ----------
 
-# application home page (will override Website Settings)
+# application home page (will override WebCustomer Site Settings)
 # home_page = "login"
 
-# website user home page (by Role)
+# webCustomer Site user home page (by Role)
 # role_home_page = {
 # 	"Role": "home_page"
 # }
@@ -112,7 +116,7 @@ fixtures = [
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+# webCustomer Site_generators = ["Web Page"]
 
 # Jinja
 # ----------

@@ -17,6 +17,7 @@ class TestCustomerPortalScope(FrappeTestCase):
             "primary_email": email,           # align with your hook’s email field
         })
         doc.flags.ignore_mandatory = True
+        doc.flags.ignore_tier_mandatory = True
         doc.insert(ignore_permissions=True)
         return doc
 

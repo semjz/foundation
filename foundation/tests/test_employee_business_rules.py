@@ -11,6 +11,9 @@ import pytest
 import frappe
 from frappe.tests.utils import FrappeTestCase
 
+ORG_TRACK_FIELD = "custom_org_track"       # Select: Administrative\nField (custom field)
+DESIGNATION_FIELD = "designation"
+
 EMP_DT = "Employee"
 
 # ---------- ultra-fast setup helpers ----------
@@ -66,8 +69,8 @@ def make_min_employee(**kw):
     # business-rule fields
     d.company_code   = kw.get("company_code", "SMW")
     d.province3      = kw.get("province3", "TEH")
-    d.org_track      = kw.get("org_track", "Field")              # custom Select (Administrative/Field)
-    d.designation    = kw.get("designation", "Truck Driver 6T")  # core Link -> Designation
+    d.custom_org_track      = kw.get(ORG_TRACK_FIELD, "Field")              # custom Select (Administrative/Field)
+    d.designation    = kw.get(DESIGNATION_FIELD, "Truck Driver 6T")  # core Link -> Designation
 
     # identity (public API uses national_code)
     nc = kw.get("national_code")
@@ -122,12 +125,12 @@ class TestEmployeeOrgRole(FrappeTestCase):
             make_min_employee(national_code="4445556667", designation="")
         # missing track
         with pytest.raises(Exception):
-            make_min_employee(national_code="5556667778", org_track="")
+            make_min_employee(national_code="5556667778", custom_org_track="")
 
     def test_org_role_happy_path(self):
         e = make_min_employee(
             national_code="6667778889",
-            org_track="Administrative",
+            custom_org_track="Administrative",
             designation="Truck Driver 6T",
         )
         assert e.name

@@ -3,97 +3,75 @@
  "allow_rename": 1,
  "creation": "2025-10-29 16:01:44.854676",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_1nqm"
+  "customer",
+  "address",
+  "site_uuid",
+  "status",
+  "service_window",
+  "latitude",
+  "longitude"
  ],
  "fields": [
   {
-    "fieldname":"customer",
-    "label":"Customer",
-    "fieldtype":"Link",
-    "options":"Customer",
-    "reqd":1
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
   },
   {
-    "fieldname":"address",
-    "label":"Address",
-    "fieldtype":"Link",
-    "options":"Address",
-    "reqd":1,
-    "unique":1
+   "fieldname": "address",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Address",
+   "options": "Address",
+   "reqd": 1,
+   "unique": 1
   },
   {
-    "fieldname":"site_uuid",
-    "label":"Site UUID",
-    "fieldtype":"Data",
-    "unique":1,
-    "read_only":1
+   "fieldname": "site_uuid",
+   "fieldtype": "Data",
+   "label": "Site UUID",
+   "read_only": 1,
+   "unique": 1
   },
   {
-    "fieldname":"status",
-    "label":"Status",
-    "fieldtype":"Select",
-    "options":"Planned\nActive\nSuspended",
-    "default":"Active"
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Planned\nActive\nSuspended"
   },
   {
-    "fieldname":"service_window",
-    "label":"Service Window",
-    "fieldtype":"Small Text"
+   "fieldname": "service_window",
+   "fieldtype": "Small Text",
+   "label": "Service Window"
   },
   {
-    "fieldname":"latitude",
-    "label":"Latitude",
-    "fieldtype":"Float"
+   "fieldname": "latitude",
+   "fieldtype": "Float",
+   "label": "Latitude"
   },
   {
-    "fieldname": "longitude",
-    "label": "Longitude",
-    "fieldtype":"Float"
+   "fieldname": "longitude",
+   "fieldtype": "Float",
+   "label": "Longitude"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
+ "istable": 1,
  "links": [],
- "modified": "2025-10-29 16:01:44.854676",
+ "modified": "2025-11-10 19:42:18.663968",
  "modified_by": "Administrator",
- "module": "Foundation",
+ "module": "foundation",
  "name": "Customer Site",
  "owner": "Administrator",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "role":"Ops Manager",
-   "read":1,
-   "write":1,
-   "create":1
-  },
-  {
-   "role": "CRM",
-   "read":1
-  },
-  {
-   "role": "Finance",
-   "read":1
-  },
-  {
-   "role":"Limited Admin",
-   "read":1,
-   "write":1
-  }
- ],
+ "permissions": [],
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
