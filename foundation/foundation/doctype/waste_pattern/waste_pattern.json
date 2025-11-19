@@ -5,19 +5,44 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_0h61"
+  "section_break_0h61",
+  "material_type",
+  "frequency_count",
+  "frequency_unit",
+  "notes"
  ],
  "fields": [
   {
    "fieldname": "section_break_0h61",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "material_type",
+   "fieldtype": "Select",
+   "label": "Material Type",
+   "options": "General\nSharps\nPharma\nIndustrial\nOther"
+  },
+  {
+   "fieldname": "frequency_count",
+   "fieldtype": "Int",
+   "label": "Frequency Count"
+  },
+  {
+   "fieldname": "frequency_unit",
+   "fieldtype": "Data",
+   "label": "Frequency Unit"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Data",
+   "label": "Notes"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-07 13:14:23.227568",
+ "modified": "2025-11-19 18:35:02.377332",
  "modified_by": "Administrator",
  "module": "foundation",
  "name": "Waste Pattern",

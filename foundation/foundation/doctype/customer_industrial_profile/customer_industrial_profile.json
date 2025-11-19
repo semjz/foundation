@@ -1,7 +1,8 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-11-10 17:08:43.759145",
+ "app": "foundation",
+ "creation": "2025-11-19 17:39:36.478208",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
@@ -18,7 +19,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-10 17:08:43.759145",
+ "modified": "2025-11-19 17:45:29.702160",
  "modified_by": "Administrator",
  "module": "foundation",
  "name": "Customer Industrial Profile",

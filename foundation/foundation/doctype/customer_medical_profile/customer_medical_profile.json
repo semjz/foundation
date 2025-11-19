@@ -1,24 +1,141 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-11-09 19:18:59.611940",
+ "app": "foundation",
+ "creation": "2025-11-19 18:13:47.283119",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "section_break_rhiy"
+  "section_break_rhiy",
+  "center_type",
+  "is_person",
+  "gender",
+  "medical_council_no",
+  "packaging_pattern",
+  "trace_policy_section",
+  "trace_path",
+  "gate_qr_required",
+  "third_party_section",
+  "third_party_scale",
+  "weigh_ticket_required",
+  "hospital_extra_fields_section",
+  "hospital_president",
+  "finance_manager",
+  "finance_manager_email",
+  "office_extra_fields_section",
+  "specialty_group"
  ],
  "fields": [
   {
    "fieldname": "section_break_rhiy",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "center_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Center Type",
+   "options": "Clinic\nOffice\nHospital\nLaboratory\nVeterinary",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_person",
+   "fieldtype": "Check",
+   "label": "Is Person",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "fieldname": "medical_council_no",
+   "fieldtype": "Data",
+   "label": "Medical Council No",
+   "reqd": 1
+  },
+  {
+   "fieldname": "packaging_pattern",
+   "fieldtype": "Table",
+   "label": "Packaging pattern",
+   "options": "Medical Packaging Row"
+  },
+  {
+   "fieldname": "trace_policy_section",
+   "fieldtype": "Section Break",
+   "label": "Trace policy"
+  },
+  {
+   "fieldname": "trace_path",
+   "fieldtype": "HTML",
+   "label": "Trace Path"
+  },
+  {
+   "default": "0",
+   "fieldname": "gate_qr_required",
+   "fieldtype": "Check",
+   "label": "Gate QR Required"
+  },
+  {
+   "fieldname": "third_party_section",
+   "fieldtype": "Section Break",
+   "label": "Third party "
+  },
+  {
+   "default": "0",
+   "fieldname": "third_party_scale",
+   "fieldtype": "Check",
+   "label": "Third Party Scale",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "weigh_ticket_required",
+   "fieldtype": "Check",
+   "label": "Weigh Ticket Required"
+  },
+  {
+   "fieldname": "hospital_extra_fields_section",
+   "fieldtype": "Section Break",
+   "label": "Hospital extra fields"
+  },
+  {
+   "fieldname": "hospital_president",
+   "fieldtype": "Data",
+   "label": "Hospital President"
+  },
+  {
+   "fieldname": "finance_manager",
+   "fieldtype": "Data",
+   "label": "Finance Manager"
+  },
+  {
+   "fieldname": "finance_manager_email",
+   "fieldtype": "Data",
+   "label": "Finance Manager Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "office_extra_fields_section",
+   "fieldtype": "Section Break",
+   "label": "Office extra fields"
+  },
+  {
+   "fieldname": "specialty_group",
+   "fieldtype": "Select",
+   "label": "Specialty Group",
+   "options": "\u067e\u0632\u0634\u06a9 \u0639\u0645\u0648\u0645\u06cc\n\u062f\u0646\u062f\u0627\u0646\u067e\u0632\u0634\u06a9\n\u067e\u0648\u0633\u062a \u0648 \u0645\u0648 \u0648 \u0632\u06cc\u0628\u0627\u06cc\u06cc\n\u062d\u062c\u0627\u0645\u062a\n\u0632\u0646\u0627\u0646 \u0648 \u0632\u0627\u06cc\u0645\u0627\u0646\n\u062c\u0631\u0627\u062d \u0639\u0645\u0648\u0645\u06cc\n\u06af\u0648\u0634 \u062d\u0644\u0642 \u0628\u06cc\u0646\u06cc\n\u0627\u0637\u0641\u0627\u0644\n\u0645\u0627\u0645\u0627\n\u0631\u0627\u062f\u06cc\u06cc\u0648\u0644\u0648\u0698\u06cc\n\u0641\u06cc\u0632\u06cc\u0648\u062a\u0631\u0627\u067e\u06cc\n\u062f\u0627\u062e\u0644\u06cc\n\u0627\u0631\u062a\u0648\u067e\u062f\n\u0627\u0648\u0631\u0648\u0644\u0648\u0698\u06cc\n\u0686\u0634\u0645\n\u0645\u062a\u062e\u0635\u0635 \u062e\u0648\u0646"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-09 19:18:59.611940",
+ "modified": "2025-11-19 18:27:56.664139",
  "modified_by": "Administrator",
  "module": "foundation",
  "name": "Customer Medical Profile",

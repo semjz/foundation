@@ -5,19 +5,45 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_zog8"
+  "section_break_zog8",
+  "weekday",
+  "shift",
+  "from_time",
+  "to_time"
  ],
  "fields": [
   {
    "fieldname": "section_break_zog8",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "weekday",
+   "fieldtype": "Select",
+   "label": "weekday",
+   "options": "Mon\nTue\nWed\nThu\nFri\nSat\nSun"
+  },
+  {
+   "fieldname": "shift",
+   "fieldtype": "Select",
+   "label": "shift",
+   "options": "AM\nPM"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "from time"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "to time"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-07 13:13:53.053699",
+ "modified": "2025-11-19 18:38:06.129959",
  "modified_by": "Administrator",
  "module": "foundation",
  "name": "Service Window",

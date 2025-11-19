@@ -55,8 +55,10 @@ custom_doctypes = [
 
 fixtures = [
     # 🔹 your existing fixtures (UNCHANGED)
-    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","Customer Site"]]]},
-    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","Customer Site"]]]},
+    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","Customer Site",
+                                                       "Customer Medical Profile", "Customer Municipal Profile", "Customer Industrial Profile", "Medical Packaging Row"]]]},
+    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","Customer Site", "Customer Medical Profile", "Customer Municipal Profile",
+                                                             "Customer Industrial Profile", "Medical Packaging Row"]]]},
     {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","Customer Site","Customer","Service Window","Waste Pattern"]]]},
     {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","Customer Site"]]]},
     {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","Customer Site"]]]},
