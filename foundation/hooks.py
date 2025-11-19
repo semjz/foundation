@@ -49,7 +49,8 @@ fixtures = [
     {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","Customer Site","Customer","Service Window","Waste Pattern"]]]},
     {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","Customer Site"]]]},
     {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","Customer Site"]]]},
-    {"dt":"Role","filters":[["role_name","in",["Customer, Employee"]]]}
+    {"dt":"Role","filters":[["role_name","in",["Customer, Employee"]]]},
+    "Territory"
 ]
 
 
