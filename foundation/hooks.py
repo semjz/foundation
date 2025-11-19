@@ -43,14 +43,58 @@ doc_events = {
     },
 }
 
+# Put this **above** fixtures in hooks.py
+custom_doctypes = [
+    "Customer Medical Profile",
+    "Customer Municipal Profile",
+    "Customer Industrial Profile",
+    "Medical Packaging Row",
+    "Customer Site"
+]
+
+
 fixtures = [
+    # 🔹 your existing fixtures (UNCHANGED)
     {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","Customer Site"]]]},
     {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","Customer Site"]]]},
     {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","Customer Site","Customer","Service Window","Waste Pattern"]]]},
     {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","Customer Site"]]]},
     {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","Customer Site"]]]},
-    {"dt":"Role","filters":[["role_name","in",["Customer, Employee"]]]},
-    "Territory"
+    {"dt": "Role","filters":[["role_name","in",["Customer, Employee"]]]},
+    "Territory",
+
+    # your specific employee extra fields fixture (UNCHANGED)
+    {
+        "doctype": "DocField",
+        "filters": [
+            ["parent", "=", "Employee"],
+            ["fieldname", "in", ["national_code", "national_card_scan", "father_name"]],
+        ],
+    },
+
+    # 🔹 NEW — include ALL your custom doctypes
+    {
+        "doctype": "DocType",
+        "filters": [
+            ["name", "in", custom_doctypes],
+        ],
+    },
+
+    # 🔹 NEW — include all fields of those custom doctypes
+    {
+        "doctype": "DocField",
+        "filters": [
+            ["parent", "in", custom_doctypes],
+        ],
+    },
+
+    # 🔹 NEW — include permissions for those doctypes
+    {
+        "doctype": "DocPerm",
+        "filters": [
+            ["parent", "in", custom_doctypes],
+        ],
+    },
 ]
 
 
