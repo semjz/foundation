@@ -7,6 +7,15 @@ app_license = "mit"
 
 required_apps = ["erpnext"]
 
+app_include_js = ["/assets/foundation/js/mandatory_helpers.js"]
+
+
+doctype_js = {
+    "Customer": "public/js/customer.js",
+    "Employee": "public/js/employee.js",
+}
+
+
 doc_events = {
     "Employee": {
         "before_insert": [

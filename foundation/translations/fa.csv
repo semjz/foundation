@@ -1,0 +1,190 @@
+AM,ق.ظ.
+About,درباره
+Active,فعال
+Address,آدرس
+Allowed Dump Zone,منطقه مجاز تخلیه پسماند
+Appraisal Template,الگوی ارزیابی
+Approvers,تأییدکنندگان
+Apps,برنامه‌ها
+Arrear Component,جزء معوقات حقوق
+Authority Type,نوع اختیار / مرجع
+Bag 15L,کیسه ۱۵ لیتری
+Bag 45L,کیسه ۴۵ لیتری
+Base+Add,پایه + افزوده
+Basic Component,جزء پایه
+Basic Info,اطلاعات پایه
+Billing Model,مدل صدور صورتحساب
+Center Type,نوع مرکز
+Clinic,کلینیک
+Contract Type,نوع قرارداد
+Customer,مشتری
+Customer Code Legacy,کد مشتری (قدیم)
+Customer Code New,کد مشتری جدید
+Customer Domain,دامنه مشتری
+Customer Industrial Profile,پروفایل صنعتی مشتری
+Customer Logo,لوگوی مشتری
+Customer Medical Profile,پروفایل پزشکی مشتری
+Customer Municipal Profile,پروفایل شهرداری مشتری
+Customer Site,سایت مشتری
+Default Employee Advance Account,حساب پیش‌پرداخت پیش‌فرض کارمند
+Default Expense Claim Payable Account,حساب پرداختنی پیش‌فرض برای درخواست هزینه
+Default Payroll Payable Account,حساب پرداختنی پیش‌فرض حقوق و دستمزد
+Default Shift,شیفت پیش‌فرض
+Density Base,مبنای چگالی
+Designation اجباری است.,عنوان شغلی اجباری است.
+Documentation,مستندات
+Education (at least one record),تحصیلات (حداقل یک رکورد)
+Education Last Degree,آخرین مدرک تحصیلی
+Employee,کارمند
+Employee Checklist,چک‌لیست کارمند
+Employment Type,نوع استخدام
+Estimation Method,روش برآورد
+Expected Annual Revenue,درآمد سالانهٔ مورد انتظار
+Expense Approver,تأییدکنندهٔ هزینه
+Father Name ,نام پدر
+Female,زن
+Finance Manager,مدیر مالی
+Finance Manager Email,ایمیل مدیر مالی
+"For tier {0}, the following fields are required: {1}",برای ردهٔ {0}، فیلدهای زیر الزامی هستند: {1}
+Foundation,فاندیشن
+Frappe School,مدرسه فرپه
+Frappe Support,پشتیبانی فرپه
+Frequency Count,تعداد دفعات
+Frequency Unit,واحد تناوب
+Fri,جمعه
+Gate QR Required,کد QR در دروازه الزامی است
+Gate Side Photo,عکس نمای دروازه
+Gender,جنسیت
+General,عمومی
+Governorate/Village,استان / روستا
+Grade,گرید شغلی
+HR & Payroll,منابع انسانی و حقوق و دستمزد
+HR & Payroll Settings,تنظیمات منابع انسانی و حقوق و دستمزد
+HRA Component,جزء کمک‌هزینه مسکن
+HRA Settings,تنظیمات کمک‌هزینه مسکن
+Health Insurance,بیمه درمانی
+Health Insurance No,شماره بیمه درمانی
+Health Insurance Provider,ارائه‌دهندهٔ بیمه درمانی
+Hospital,بیمارستان
+Hospital President,رئیس بیمارستان
+Hospital extra fields,فیلدهای اضافی بیمارستان
+IFSC Code,کد IFSC
+Id Card Both Sides,اسکن هر دو روی کارت شناسایی
+Industrial,صنعتی
+Industry,صنعت
+Invalid format:,قالب نامعتبر است:
+Is Person,شخص حقیقی است
+Is customer exempted from sales tax?,آیا مشتری از مالیات بر فروش معاف است؟
+Jalali Contract End Date ,تاریخ پایان قرارداد (جلالی)
+Jalali Date of Joining,تاریخ شروع به کار (جلالی)
+Job Applicant,متقاضی شغل
+Keyboard Shortcuts,میانبرهای صفحه‌کلید
+Laboratory,آزمایشگاه
+Large,بزرگ
+Latest Qualification Scan,اسکن آخرین مدرک تحصیلی
+Latitude,عرض جغرافیایی
+Leave Approver,تأییدکنندهٔ مرخصی
+Legal Form,نوع شخصیت حقوقی
+Log out,خروج از سیستم
+Longitude,طول جغرافیایی
+Loyalty Program,برنامهٔ وفاداری
+MICR Code,کد MICR
+Male,مرد
+Material Type,نوع ماده
+Medical Council No,شماره نظام پزشکی
+Medical Packaging Row,ردیف بسته‌بندی پزشکی
+Medium,متوسط
+Missing:,کمبود:
+Mon,دوشنبه
+Municipality,شهرداری
+My Profile,پروفایل من
+My Settings,تنظیمات من
+National Code ,کد ملی
+National Card Scan,اسکن کد ملی
+National Code is invalid. Please check the 10-digit number.,کد ملی نامعتبر است. لطفاً شماره ۱۰ رقمی را بررسی کنید.
+National ID Scan is required.,اسکن کارت ملی الزامی است.
+National ID files must be Private.,فایل‌های کارت ملی باید خصوصی باشند.
+Notes,یادداشت‌ها
+Office,دفتر
+Office extra fields,فیلدهای اضافی دفتر
+"Only PDF, JPG, JPEG, or PNG is allowed for National ID Scan.",برای اسکن کارت ملی فقط فرمت‌های PDF ،JPG ،JPEG یا PNG مجاز است.
+Other,سایر
+PAN Number,شماره PAN
+PM,ب.ظ.
+Pack Type,نوع بسته
+Packaging pattern,الگوی بسته‌بندی
+Payroll Cost Center,مرکز هزینهٔ حقوق و دستمزد
+Payroll Enabled,حقوق و دستمزد فعال است
+Payroll Enabled On,تاریخ فعال‌سازی حقوق و دستمزد
+Payroll Missing Fields,فیلدهای ناقص حقوق و دستمزد
+Per-Visit,به‌ازای هر بازدید
+Pharma,داروسازی
+Planned,برنامه‌ریزی شده
+Pricing density policy,سیاست قیمت‌گذاری بر اساس چگالی
+Provident Fund Account,حساب صندوق بازنشستگی
+Reload,بارگذاری مجدد
+Report an Issue,گزارش مشکل
+Required Skills,مهارت‌های مورد نیاز
+Salutation, عنوان
+SLA Contract,قرارداد SLA
+Sampling Monthly,نمونه‌برداری ماهانه
+Sat,شنبه
+Scale Mandatory,وزن‌کشی اجباری است
+Segment,بخش
+Service Window,بازهٔ خدمت‌رسانی
+Service Window(s),بازه(های) خدمت‌رسانی
+Session Defaults,پیش‌فرض‌های نشست
+Shaba No,شماره شبا
+Sharps,پسماند تیز و برنده
+Shenasnameh Full,اسکن کامل شناسنامه
+Shift Request Approver,تأییدکنندهٔ درخواست شیفت
+Signed Contract,قرارداد امضا شده
+Site HSE Contact,مسئول HSE سایت
+Site HSE Mobile,شماره موبایل مسئول HSE سایت
+Site UUID,شناسهٔ یکتای سایت
+Sites,سایت‌ها
+Sites count,تعداد سایت‌ها
+Skills,مهارت‌ها
+Small,کوچک
+Special,ویژه
+Special requirements,نیازمندی‌های ویژه
+Specialty Group,گروه تخصص
+Status,وضعیت
+Sun,یکشنبه
+Suspended,معلق
+System Manager,مدیر سیستم
+Tax ID,شناسهٔ مالیاتی
+Third Party Scale,باسکول شخص ثالث
+Third party ,شخص ثالث
+Third-party scale,باسکول شخص ثالث
+This exact file is already attached to another Employee.,این فایل دقیقاً از قبل به کارمند دیگری پیوست شده است.
+Thu,پنجشنبه
+Tier,رده / سطح
+Tiered,چندس‍طحی
+Toggle Full Width,تغییر نمایش تمام‌عرض
+Toggle Theme,تغییر تم
+Trace Path,مسیر رهگیری
+Trace policy,سیاست رهگیری
+Tue,سه‌شنبه
+Upload the National ID to the field (don’t paste a URL).,کارت ملی را در همین فیلد بارگذاری کنید (نشانی اینترنتی را جای‌گذاری نکنید).
+User Forum,انجمن کاربران
+Veterinary,دامپزشکی
+View Website,مشاهدهٔ وب‌سایت
+Visits × BinVolume × RefDensity,تعداد بازدید × حجم مخزن × چگالی مرجع
+Waste Class,کلاس پسماند
+Waste Pattern,الگوی پسماند
+Wed,چهارشنبه
+Weigh Ticket Required,ارائهٔ برگهٔ توزین الزامی است
+basic info,اطلاعات پایه
+company_province,استان شرکت
+employee_no,شماره کارمند
+foundation,فاندیشن
+from time,از ساعت
+notes,یادداشت‌ها
+org_track,مسیر سازمانی
+org_track اجباری است (Administrative یا Field).,org_track اجباری است (Administrative یا Field).
+org_track فقط می‌تواند Administrative یا Field باشد.,org_track فقط می‌تواند Administrative یا Field باشد.
+pack_type,نوع بسته‌بندی
+shift,شیفت
+to time,تا ساعت
+weekday,روز هفته
