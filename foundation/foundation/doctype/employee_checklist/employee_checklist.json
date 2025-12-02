@@ -5,20 +5,55 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_aj9t"
+  "section_break_aj9t",
+  "employee",
+  "id_card_both_sides",
+  "shenasnameh_full",
+  "education_last_degree",
+  "signed_contract"
  ],
  "fields": [
   {
    "fieldname": "section_break_aj9t",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "default": "0",
+   "fieldname": "id_card_both_sides",
+   "fieldtype": "Check",
+   "label": "Id Card Both Sides"
+  },
+  {
+   "default": "0",
+   "fieldname": "shenasnameh_full",
+   "fieldtype": "Check",
+   "label": "Shenasnameh Full"
+  },
+  {
+   "default": "0",
+   "fieldname": "education_last_degree",
+   "fieldtype": "Check",
+   "label": "Education Last Degree"
+  },
+  {
+   "default": "0",
+   "fieldname": "signed_contract",
+   "fieldtype": "Check",
+   "label": "Signed Contract"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-11-05 18:21:30.362396",
+ "modified": "2025-11-25 11:55:49.574466",
  "modified_by": "Administrator",
- "module": "Foundation",
+ "module": "foundation",
  "name": "Employee Checklist",
  "owner": "Administrator",
  "permissions": [

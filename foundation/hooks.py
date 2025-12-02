@@ -22,6 +22,7 @@ doc_events = {
             "foundation.employee_hooks.identity.enforce_business_keys",
             "foundation.employee_hooks.numbering.assign_employee_display_number",
             "foundation.employee_hooks.org_role.require_org_role_fields",
+            "foundation.general_hooks.canonical_id.set_canonical_id"
         ],
         "validate": [
             "foundation.employee_hooks.org_role.require_org_role_fields",
@@ -39,6 +40,7 @@ doc_events = {
         ],
     },
     "Customer": {
+        "before_insert": "foundation.general_hooks.canonical_id.set_canonical_id",
         "after_insert": "foundation.customer_hooks.portal.ensure_user_and_permission",
         "validate": [
             "foundation.customer_hooks.customer_business_rules.validate_customer_business_rules",

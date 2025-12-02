@@ -12,7 +12,11 @@ def _get_email(doc):
 def ensure_user_and_permission(doc, method=None):
     email = _get_email(doc)
     if not email:
-        return
+        # This will stop the import for this row with a clear message
+        frappe.throw(
+            f"Customer {doc.name} has no email. "
+            "Each Customer  must have a unique email so a User can be created."
+        )
 
     # 1) Ensure Website User exists
     user_name = frappe.db.get_value("User", {"email": email})
