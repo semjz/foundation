@@ -41,11 +41,16 @@ doc_events = {
     },
     "Customer": {
         "before_insert": "foundation.general_hooks.canonical_id.set_canonical_id",
-        "after_insert": "foundation.customer_hooks.portal.ensure_user_and_permission",
+        "after_insert": [
+                         "foundation.customer_hooks.portal.ensure_user_and_permission",
+                         "foundation.customer_hooks.customer_qr.ensure_customer_qr_code" 
+                         ],
         "validate": [
             "foundation.customer_hooks.customer_business_rules.validate_customer_business_rules",
-            "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules"
-            ]
+            # "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules"
+            ],
+        "on_update": "foundation.customer_hooks.customer_qr.ensure_customer_qr_code"
+
     },
     "File": {
         "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
