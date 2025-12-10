@@ -10,10 +10,10 @@ required_apps = ["erpnext"]
 app_include_js = ["/assets/foundation/js/mandatory_helpers.js"]
 
 
-doctype_js = {
-    "Customer": "public/js/customer.js",
-    "Employee": "public/js/employee.js",
-}
+# doctype_js = {
+#     "Customer": "public/js/customer.js",
+#     "Employee": "public/js/employee.js",
+# }
 
 
 doc_events = {
@@ -54,61 +54,48 @@ doc_events = {
     },
 }
 
-# Put this **above** fixtures in hooks.py
-custom_doctypes = [
-    "Customer Medical Profile",
-    "Customer Municipal Profile",
-    "Customer Industrial Profile",
-    "Medical Packaging Row",
-    "Customer Site"
-]
-
+edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales Invoice"]
 
 fixtures = [
-    # 🔹 your existing fixtures (UNCHANGED)
-    {"dt": "Custom Field",    "filters": [["dt","in",["Employee","Customer","Company","Designation","Customer Site",
-                                                       "Customer Medical Profile", "Customer Municipal Profile", "Customer Industrial Profile", "Medical Packaging Row"]]]},
-    {"dt": "Property Setter", "filters": [["doc_type","in",["Employee","Customer","Customer Site", "Customer Medical Profile", "Customer Municipal Profile",
-                                                             "Customer Industrial Profile", "Medical Packaging Row"]]]},
-    {"dt": "Custom DocPerm",  "filters": [["parent","in",["Employee","Customer Site","Customer","Service Window","Waste Pattern"]]]},
-    {"dt": "Client Script",   "filters": [["dt","in",["Employee","Customer","Customer Site"]]]},
-    {"dt": "Server Script",   "filters": [["reference_doctype","in",["Employee","Customer","Customer Site"]]]},
-    {"dt": "Role","filters":[["role_name","in",["Customer, Employee"]]]},
-    "Territory",
-
-    # your specific employee extra fields fixture (UNCHANGED)
     {
-        "doctype": "DocField",
+        "dt": "Custom Field",
         "filters": [
-            ["parent", "=", "Employee"],
-            ["fieldname", "in", ["national_code", "national_card_scan", "father_name"]],
+            ["dt", "in", edited_core_doctypes],
+        ],
+    },
+    {
+        "dt": "Property Setter",
+        "filters": [
+            ["doc_type", "in", edited_core_doctypes],
+        ],
+    },
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            ["parent", "in", edited_core_doctypes],
+        ],
+    },
+    {
+        "dt": "Client Script",
+        "filters": [
+            ["dt", "in", edited_core_doctypes],
+        ],
+    },
+    {
+        "dt": "Server Script",
+        "filters": [
+            ["reference_doctype", "in", edited_core_doctypes],
+        ],
+    },
+    {
+        "dt": "Role",
+        "filters": [
+            ["role_name", "in", ["Customer", "Employee"]],
         ],
     },
 
-    # 🔹 NEW — include ALL your custom doctypes
-    {
-        "doctype": "DocType",
-        "filters": [
-            ["name", "in", custom_doctypes],
-        ],
-    },
-
-    # 🔹 NEW — include all fields of those custom doctypes
-    {
-        "doctype": "DocField",
-        "filters": [
-            ["parent", "in", custom_doctypes],
-        ],
-    },
-
-    # 🔹 NEW — include permissions for those doctypes
-    {
-        "doctype": "DocPerm",
-        "filters": [
-            ["parent", "in", custom_doctypes],
-        ],
-    },
 ]
+
 
 
 # Apps

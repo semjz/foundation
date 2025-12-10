@@ -1,1 +1,28 @@
-[]
+[
+ {
+  "desk_access": 1,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-09-27 18:22:23.776080",
+  "name": "Employee",
+  "restrict_to_domain": null,
+  "role_name": "Employee",
+  "two_factor_auth": 0
+ },
+ {
+  "desk_access": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Role",
+  "home_page": null,
+  "is_custom": 0,
+  "modified": "2025-09-27 18:23:27.499960",
+  "name": "Customer",
+  "restrict_to_domain": null,
+  "role_name": "Customer",
+  "two_factor_auth": 0
+ }
+]
