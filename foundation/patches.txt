@@ -7,3 +7,5 @@ foundation.patches.v1.add_base_territories
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+foundation.patches.v1_0.add_base_territories
+foundation.patches.v1_0.set_customer_autoname_canonical_id
