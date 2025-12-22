@@ -1,4 +1,5 @@
 AM,ق.ظ.
+PM,ب.ظ.
 About,درباره
 Active,فعال
 Address,آدرس
@@ -7,56 +8,56 @@ Appraisal Template,الگوی ارزیابی
 Approvers,تأییدکنندگان
 Apps,برنامه‌ها
 Arrear Component,جزء معوقات حقوق
-Authority Type,نوع اختیار / مرجع
+Authority Type,نوع مرجع اختیار
 Bag 15L,کیسه ۱۵ لیتری
 Bag 45L,کیسه ۴۵ لیتری
-Base+Add,پایه + افزوده
+Base+Add,پایه + مزایا
 Basic Component,جزء پایه
 Basic Info,اطلاعات پایه
-Billing Model,مدل صدور صورتحساب
+Billing Model,مدل صورتحساب‌گیری
 Center Type,نوع مرکز
 Clinic,کلینیک
 Contract Type,نوع قرارداد
 Customer,مشتری
-Customer Code Legacy,کد مشتری (قدیم)
+Customer Code Legacy,کد مشتری (قدیمی)
 Customer Code New,کد مشتری جدید
-Customer Domain,دامنه مشتری
+Customer Domain,حوزه فعالیت مشتری
 Customer Industrial Profile,پروفایل صنعتی مشتری
 Customer Logo,لوگوی مشتری
 Customer Medical Profile,پروفایل پزشکی مشتری
 Customer Municipal Profile,پروفایل شهرداری مشتری
 Customer Site,سایت مشتری
-Default Employee Advance Account,حساب پیش‌پرداخت پیش‌فرض کارمند
-Default Expense Claim Payable Account,حساب پرداختنی پیش‌فرض برای درخواست هزینه
+Default Employee Advance Account,حساب پیش‌پرداخت پیش‌فرض کارکنان
+Default Expense Claim Payable Account,حساب پرداختنی پیش‌فرض مطالبات هزینه
 Default Payroll Payable Account,حساب پرداختنی پیش‌فرض حقوق و دستمزد
 Default Shift,شیفت پیش‌فرض
 Density Base,مبنای چگالی
-Designation اجباری است.,عنوان شغلی اجباری است.
+Designation is mandatory.,عنوان شغلی الزامی است.
 Documentation,مستندات
-Education (at least one record),تحصیلات (حداقل یک رکورد)
+Education (at least one record),تحصیلات (حداقل یک مورد الزامی است)
 Education Last Degree,آخرین مدرک تحصیلی
 Employee,کارمند
 Employee Checklist,چک‌لیست کارمند
 Employment Type,نوع استخدام
 Estimation Method,روش برآورد
-Expected Annual Revenue,درآمد سالانهٔ مورد انتظار
-Expense Approver,تأییدکنندهٔ هزینه
-Father Name ,نام پدر
+Expected Annual Revenue,درآمد سالانه مورد انتظار
+Expense Approver,تأییدکننده هزینه
+Father Name,نام پدر
 Female,زن
 Finance Manager,مدیر مالی
 Finance Manager Email,ایمیل مدیر مالی
-"For tier {0}, the following fields are required: {1}",برای ردهٔ {0}، فیلدهای زیر الزامی هستند: {1}
+"For tier {0}, the following fields are required: {1}","برای رده {0}، فیلدهای زیر الزامی هستند: {1}"
 Foundation,فاندیشن
 Frappe School,مدرسه فرپه
 Frappe Support,پشتیبانی فرپه
 Frequency Count,تعداد دفعات
 Frequency Unit,واحد تناوب
 Fri,جمعه
-Gate QR Required,کد QR در دروازه الزامی است
+Gate QR Required,ارائه کد QR در دروازه الزامی است
 Gate Side Photo,عکس نمای دروازه
 Gender,جنسیت
 General,عمومی
-Governorate/Village,استان / روستا
+Governorate/Village,استان / شهر / روستا
 Grade,گرید شغلی
 HR & Payroll,منابع انسانی و حقوق و دستمزد
 HR & Payroll Settings,تنظیمات منابع انسانی و حقوق و دستمزد
@@ -64,18 +65,18 @@ HRA Component,جزء کمک‌هزینه مسکن
 HRA Settings,تنظیمات کمک‌هزینه مسکن
 Health Insurance,بیمه درمانی
 Health Insurance No,شماره بیمه درمانی
-Health Insurance Provider,ارائه‌دهندهٔ بیمه درمانی
+Health Insurance Provider,ارائه‌دهنده بیمه درمانی
 Hospital,بیمارستان
 Hospital President,رئیس بیمارستان
 Hospital extra fields,فیلدهای اضافی بیمارستان
-IFSC Code,کد IFSC
-Id Card Both Sides,اسکن هر دو روی کارت شناسایی
+IFSC Code,کد IFSC (شناسه بانکی)
+Id Card Both Sides,اسکن دو روی کارت شناسایی
 Industrial,صنعتی
 Industry,صنعت
 Invalid format:,قالب نامعتبر است:
-Is Person,شخص حقیقی است
-Is customer exempted from sales tax?,آیا مشتری از مالیات بر فروش معاف است؟
-Jalali Contract End Date ,تاریخ پایان قرارداد (جلالی)
+Is Person,شخص حقیقی
+Is customer exempted from sales tax?,آیا مشتری از مالیات فروش معاف است؟
+Jalali Contract End Date,تاریخ پایان قرارداد (جلالی)
 Jalali Date of Joining,تاریخ شروع به کار (جلالی)
 Job Applicant,متقاضی شغل
 Keyboard Shortcuts,میانبرهای صفحه‌کلید
@@ -83,65 +84,64 @@ Laboratory,آزمایشگاه
 Large,بزرگ
 Latest Qualification Scan,اسکن آخرین مدرک تحصیلی
 Latitude,عرض جغرافیایی
-Leave Approver,تأییدکنندهٔ مرخصی
+Leave Approver,تأییدکننده مرخصی
 Legal Form,نوع شخصیت حقوقی
-Log out,خروج از سیستم
+Log out,خروج
 Longitude,طول جغرافیایی
-Loyalty Program,برنامهٔ وفاداری
+Loyalty Program,برنامه وفاداری
 MICR Code,کد MICR
 Male,مرد
-Material Type,نوع ماده
+Material Type,نوع ماده / پسماند
 Medical Council No,شماره نظام پزشکی
 Medical Packaging Row,ردیف بسته‌بندی پزشکی
 Medium,متوسط
-Missing:,کمبود:
+Missing:,فیلدهای ناقص:
 Mon,دوشنبه
 Municipality,شهرداری
 My Profile,پروفایل من
 My Settings,تنظیمات من
-National Code ,کد ملی
-National Card Scan,اسکن کد ملی
+National Code,کد ملی
+National Card Scan,اسکن کارت ملی
 National Code is invalid. Please check the 10-digit number.,کد ملی نامعتبر است. لطفاً شماره ۱۰ رقمی را بررسی کنید.
 National ID Scan is required.,اسکن کارت ملی الزامی است.
 National ID files must be Private.,فایل‌های کارت ملی باید خصوصی باشند.
-Notes,یادداشت‌ها
+Notes,توضیحات
 Office,دفتر
 Office extra fields,فیلدهای اضافی دفتر
-"Only PDF, JPG, JPEG, or PNG is allowed for National ID Scan.",برای اسکن کارت ملی فقط فرمت‌های PDF ،JPG ،JPEG یا PNG مجاز است.
+"Only PDF, JPG, JPEG, or PNG is allowed for National ID Scan.","برای اسکن کارت ملی فقط فایل‌های PDF، JPG، JPEG یا PNG مجاز هستند."
 Other,سایر
 PAN Number,شماره PAN
-PM,ب.ظ.
-Pack Type,نوع بسته
+Pack Type,نوع بسته‌بندی
 Packaging pattern,الگوی بسته‌بندی
-Payroll Cost Center,مرکز هزینهٔ حقوق و دستمزد
-Payroll Enabled,حقوق و دستمزد فعال است
+Payroll Cost Center,مرکز هزینه حقوق و دستمزد
+Payroll Enabled,فعال‌سازی حقوق و دستمزد
 Payroll Enabled On,تاریخ فعال‌سازی حقوق و دستمزد
 Payroll Missing Fields,فیلدهای ناقص حقوق و دستمزد
-Per-Visit,به‌ازای هر بازدید
+Per-Visit,به‌ازای هر مراجعه
 Pharma,داروسازی
-Planned,برنامه‌ریزی شده
+Planned,برنامه‌ریزی‌شده
 Pricing density policy,سیاست قیمت‌گذاری بر اساس چگالی
 Provident Fund Account,حساب صندوق بازنشستگی
 Reload,بارگذاری مجدد
 Report an Issue,گزارش مشکل
 Required Skills,مهارت‌های مورد نیاز
-Salutation, عنوان
+Salutation,عنوان خطاب
 SLA Contract,قرارداد SLA
 Sampling Monthly,نمونه‌برداری ماهانه
 Sat,شنبه
-Scale Mandatory,وزن‌کشی اجباری است
+Scale Mandatory,وزن‌کشی الزامی
 Segment,بخش
-Service Window,بازهٔ خدمت‌رسانی
-Service Window(s),بازه(های) خدمت‌رسانی
-Session Defaults,پیش‌فرض‌های نشست
+Service Window,بازه زمانی خدمت‌رسانی
+Service Window(s),بازه(های) زمانی خدمت‌رسانی
+Session Defaults,پیش‌فرض‌های نشست کاری
 Shaba No,شماره شبا
 Sharps,پسماند تیز و برنده
 Shenasnameh Full,اسکن کامل شناسنامه
-Shift Request Approver,تأییدکنندهٔ درخواست شیفت
+Shift Request Approver,تأییدکننده درخواست شیفت
 Signed Contract,قرارداد امضا شده
 Site HSE Contact,مسئول HSE سایت
 Site HSE Mobile,شماره موبایل مسئول HSE سایت
-Site UUID,شناسهٔ یکتای سایت
+Site UUID,شناسه یکتای سایت
 Sites,سایت‌ها
 Sites count,تعداد سایت‌ها
 Skills,مهارت‌ها
@@ -153,28 +153,28 @@ Status,وضعیت
 Sun,یکشنبه
 Suspended,معلق
 System Manager,مدیر سیستم
-Tax ID,شناسهٔ مالیاتی
+Tax ID,شناسه مالیاتی
 Third Party Scale,باسکول شخص ثالث
-Third party ,شخص ثالث
+Third party,شخص ثالث
 Third-party scale,باسکول شخص ثالث
-This exact file is already attached to another Employee.,این فایل دقیقاً از قبل به کارمند دیگری پیوست شده است.
+This exact file is already attached to another Employee.,این فایل دقیقاً قبلاً به کارمند دیگری پیوست شده است.
 Thu,پنجشنبه
 Tier,رده / سطح
-Tiered,چندس‍طحی
-Toggle Full Width,تغییر نمایش تمام‌عرض
-Toggle Theme,تغییر تم
+Tiered,چندسطحی
+Toggle Full Width,تغییر به حالت تمام‌عرض
+Toggle Theme,تغییر پوسته
 Trace Path,مسیر رهگیری
 Trace policy,سیاست رهگیری
 Tue,سه‌شنبه
-Upload the National ID to the field (don’t paste a URL).,کارت ملی را در همین فیلد بارگذاری کنید (نشانی اینترنتی را جای‌گذاری نکنید).
+Upload the National ID to the field (don’t paste a URL).,کارت ملی را در همین فیلد بارگذاری کنید (لطفاً نشانی اینترنتی وارد نکنید).
 User Forum,انجمن کاربران
 Veterinary,دامپزشکی
-View Website,مشاهدهٔ وب‌سایت
-Visits × BinVolume × RefDensity,تعداد بازدید × حجم مخزن × چگالی مرجع
+View Website,مشاهده وب‌سایت
+Visits × BinVolume × RefDensity,تعداد مراجعات × حجم مخزن × چگالی مرجع
 Waste Class,کلاس پسماند
 Waste Pattern,الگوی پسماند
 Wed,چهارشنبه
-Weigh Ticket Required,ارائهٔ برگهٔ توزین الزامی است
+Weigh Ticket Required,ارائه رسید توزین الزامی است
 basic info,اطلاعات پایه
 company_province,استان شرکت
 employee_no,شماره کارمند
@@ -188,3 +188,56 @@ pack_type,نوع بسته‌بندی
 shift,شیفت
 to time,تا ساعت
 weekday,روز هفته
+recruitment, اسنخدام
+Ceiling Period,دوره سقف
+Contract Number,شماره قرارداد
+Date of contract,تاریخ قرارداد
+Designation is mandatory.,عنوان شغلی الزامی است.
+Excess Rate Per KG,نرخ مازاد به‌ازای هر کیلوگرم
+Financial terms,شرایط مالی
+Jalali Contract End Date,تاریخ پایان قرارداد (جلالی)
+Monthly Amount,مبلغ ماهانه
+Payment Model,مدل پرداخت
+SS Code,کد SS
+Signed Contract File,فایل قرارداد امضا شده
+Territory SS Code,کد SS محدوده
+Third party,شخص ثالث
+Action not allowed.,اقدام مجاز نیست.
+Company is missing on the document.,شرکت در سند مشخص نشده است.
+Company is required for CEO. Please choose a company.,برای مدیرعامل انتخاب شرکت الزامی است. لطفاً یک شرکت انتخاب کنید.
+"Error: {0}","خطا: {0}"
+Managing Director,مدیرعامل
+Not allowed in workflow state: {0},در وضعیت گردش‌کار {0} مجاز نیست.
+Not allowed to change company.,تغییر شرکت مجاز نیست.
+Not allowed to generate letters.,ایجاد نامه مجاز نیست.
+Only allowed for Draft documents.,فقط برای اسناد در حالت پیش‌نویس مجاز است.
+Only employees can create letters (no Employee linked to this user).,فقط کارکنان مجاز به ایجاد نامه هستند (هیچ کارمندی به این کاربر متصل نیست).
+Pending CEO Approval,در انتظار تأیید مدیرعامل
+Pending MD Approval,در انتظار تأیید مدیرعامل
+Prompt is required for letter type: {0},برای نوع نامه {0} وارد کردن متن راهنما الزامی است.
+Reference Date djalali,تاریخ مرجع (جلالی)
+Reference Letter,نامه مرجع
+You are not allowed to create letters.,شما مجاز به ایجاد نامه نیستید.
+Client Request Id,شناسه درخواست مشتری
+Field Service Log,گزارش عملیات میدانی
+Final,نهایی
+Finance,مالی
+GPS Lat,عرض جغرافیایی (GPS)
+GPS Lng,طول جغرافیایی (GPS)
+Invalid Driver Canonical ID,شناسه یکتای راننده نامعتبر است
+Limited Admin,مدیر محدود
+Ops Manager,مدیر عملیات
+Photo,تصویر
+Qr Token,توکن QR
+Qty/Weight,تعداد / وزن
+Site,سایت
+Transport,حمل‌ونقل
+Trip Date,تاریخ سفر
+Trip Id,شناسه سفر
+Employee Lifecycle,چرخه عمر کارمند
+Performance,عملکرد
+shift & Attendance,شیفت و حضور و غیاب
+Financial Reports,گزارش‌های مالی
+Salary Payout,پرداخت حقوق
+Tax & Benefits,مالیات و مزایا
+Unit of Measure,واحد اندازه‌گیری
