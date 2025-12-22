@@ -188,7 +188,7 @@ pack_type,نوع بسته‌بندی
 shift,شیفت
 to time,تا ساعت
 weekday,روز هفته
-recruitment, اسنخدام
+Recruitment, استخدام
 Ceiling Period,دوره سقف
 Contract Number,شماره قرارداد
 Date of contract,تاریخ قرارداد
@@ -236,7 +236,7 @@ Trip Date,تاریخ سفر
 Trip Id,شناسه سفر
 Employee Lifecycle,چرخه عمر کارمند
 Performance,عملکرد
-shift & Attendance,شیفت و حضور و غیاب
+Shift & Attendance,شیفت و حضور و غیاب
 Financial Reports,گزارش‌های مالی
 Salary Payout,پرداخت حقوق
 Tax & Benefits,مالیات و مزایا

@@ -53,6 +53,7 @@ doc_events = {
 edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales Invoice"]
 
 fixtures = [
+    "Workspace",
     {
         "dt": "Custom Field",
         "filters": [
