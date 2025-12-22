@@ -54,6 +54,7 @@ edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales In
 
 fixtures = [
     "Workspace",
+    "Gender",
     {
         "dt": "Custom Field",
         "filters": [
