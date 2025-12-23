@@ -55,6 +55,24 @@ edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales In
 fixtures = [
     "Workspace",
     "Gender",
+    {"dt": "Property Setter",
+    "filters": [
+        ["doc_type", "in", edited_core_doctypes],
+        ["doctype_or_field", "=", "DocField"],
+        ["property", "in", [
+            "hidden",
+            "depends_on",
+            "mandatory_depends_on",
+            "collapsible",
+            "collapsible_depends_on",
+            "reqd",
+            "read_only",
+            "in_list_view",
+            "in_standard_filter",
+            "bold",
+            ]],
+        ]
+    },
 
     # ✅ Only your custom fields (portable across versions)
     {
