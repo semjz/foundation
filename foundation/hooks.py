@@ -55,55 +55,18 @@ edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales In
 fixtures = [
     "Workspace",
     "Gender",
-    {"dt": "Property Setter",
-    "filters": [
-        ["doc_type", "in", edited_core_doctypes],
-        ["doctype_or_field", "=", "DocField"],
-        ["property", "in", [
-            "hidden",
-            "depends_on",
-            "mandatory_depends_on",
-            "collapsible",
-            "collapsible_depends_on",
-            "reqd",
-            "read_only",
-            "in_list_view",
-            "in_standard_filter",
-            "bold",
-            ]],
-        ]
-    },
-
-    # ✅ Only your custom fields (portable across versions)
     {
         "dt": "Custom Field",
         "filters": [
             ["dt", "in", edited_core_doctypes],
-            ["fieldname", "like", "custom_%"],
         ],
     },
-
-    # ✅ Only your custom field property setters (avoid tab/section hidden zombies)
     {
         "dt": "Property Setter",
         "filters": [
             ["doc_type", "in", edited_core_doctypes],
-            ["doctype_or_field", "=", "DocField"],
-            ["field_name", "like", "custom_%"],
-            ["property", "in", ["hidden", "reqd", "permlevel", "unique", "read_only", "options", "fetch_from", "depends_on"]],
         ],
     },
-
-    # ✅ Optional: only doctype-level settings you intentionally control
-    {
-        "dt": "Property Setter",
-        "filters": [
-            ["doc_type", "in", edited_core_doctypes],
-            ["doctype_or_field", "=", "DocType"],
-            ["property", "in", ["autoname", "default_print_format", "allow_rename"]],
-        ],
-    },
-
     {
         "dt": "Custom DocPerm",
         "filters": [
@@ -128,6 +91,7 @@ fixtures = [
             ["role_name", "in", ["Customer", "Employee"]],
         ],
     },
+
 ]
 
 
