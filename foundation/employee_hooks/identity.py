@@ -3,7 +3,9 @@ import re
 import frappe
 from frappe import _
 
-NAT_ID_FIELD = "national_code"
+NAT_ID_FIELD = "custom_national_code"
+OLD_NAT_ID_FIELD = "national_code"
+
 
 def _normalize_nat(x: str) -> str:
     return re.sub(r"\D+", "", x or "")

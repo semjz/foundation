@@ -1,5 +1,8 @@
 import frappe
 
+TERRITORY = "custom_territory"
+CANONICAL_ID = "custom_canonical_id"
+
 # Map doctype -> T code
 ENTITY_TYPE_MAP = {
     "Customer": "C",
@@ -19,7 +22,7 @@ def get_ss_from_territory(territory_name: str) -> str:
     """Get SS from Territory SS Code mapping."""
     ss_code = frappe.db.get_value(
         "Territory SS Code",
-        {"territory": territory_name},
+        {"TERRITORY": territory_name},
         "ss_code",
     )
 
@@ -56,7 +59,7 @@ def set_canonical_id(doc, method=None):
     """
 
     # don't overwrite if it's already set (e.g. data import)
-    if doc.canonical_id:
+    if doc.custom_canonical_id:
         return
 
     doctype = doc.doctype
@@ -65,7 +68,7 @@ def set_canonical_id(doc, method=None):
         # not a managed entity type
         return
 
-    territory_name = doc.territory
+    territory_name = doc.TERRITORY
     if not territory_name:
         frappe.throw(f"Territory is required to generate Canonical ID for {doctype}")
 
@@ -73,10 +76,7 @@ def set_canonical_id(doc, method=None):
     ss_code = get_ss_from_territory(territory_name)
 
     # 2) NNNNN based on how many existing records share this SS + T prefix
-    serial_str = get_simple_serial(doctype)
+    serial_str = get_simple_serial(doctype, ss_code, entity_type)
 
     # 3) Final canonical ID (no K for now)
-    doc.canonical_id = f"{ss_code}-{entity_type}-{serial_str}"
-
-    doc.name = doc.canonical_id
-    doc.flags.name_set = True
+    doc.custom_canonical_id = f"{ss_code}-{entity_type}-{serial_str}"

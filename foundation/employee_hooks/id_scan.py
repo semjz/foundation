@@ -7,13 +7,16 @@ from foundation.api.validate_helpers import (
     validate_iran_national_code,
 )
 
+NAT_ID_FIELD = "custom_national_code"
+NAT_CARD_SCAN = "custom_national_card_scan"
+
 def enforce_employee_national_id_attachment_policy(doc, method):
     """
     Employee.before_save:
-      - require Employee.national_id_scan
+      - require Employee.NAT_CARD_SCAN
       - require the underlying File row (not just a pasted URL)
       - file must be Private and of allowed type
-      - if national_code present, validate it
+      - if NAT_ID_FIELD present, validate it
       - prevent duplicate content_hash across employees
     """
     # --- test-only escape hatch ---
@@ -21,7 +24,7 @@ def enforce_employee_national_id_attachment_policy(doc, method):
         return
     # --------------------------------
 
-    if not getattr(doc, "national_id_scan", None):
+    if not getattr(doc, "NAT_CARD_SCAN", None):
         frappe.throw(_("National ID Scan is required."))
 
     files = frappe.get_all(
@@ -29,7 +32,7 @@ def enforce_employee_national_id_attachment_policy(doc, method):
         filters={
             "attached_to_doctype": "Employee",
             "attached_to_name": doc.name,
-            "attached_to_field": "national_id_scan",
+            "attached_to_field": "NAT_CARD_SCAN",
         },
         fields=["name", "is_private", "mime_type", "file_name", "content_hash"],
         limit=1,
@@ -47,8 +50,8 @@ def enforce_employee_national_id_attachment_policy(doc, method):
     if not (mime_ok or ext_ok):
         frappe.throw(_("Only PDF, JPG, JPEG, or PNG is allowed for National ID Scan."))
 
-    if hasattr(doc, "national_code") and getattr(doc, "national_code", None):
-        if not validate_iran_national_code(doc.national_code or ""):
+    if hasattr(doc, "NAT_ID_FIELD") and getattr(doc, "NAT_ID_FIELD", None):
+        if not validate_iran_national_code(doc.custom_national_code or ""):
             frappe.throw(_("National Code is invalid. Please check the 10-digit number."))
 
     ch = f.get("content_hash")
@@ -57,7 +60,7 @@ def enforce_employee_national_id_attachment_policy(doc, method):
             "File",
             filters={
                 "attached_to_doctype": "Employee",
-                "attached_to_field": "national_id_scan",
+                "attached_to_field": "NAT_CARD_SCAN",
                 "content_hash": ch,
                 "attached_to_name": ["!=", doc.name],
             },

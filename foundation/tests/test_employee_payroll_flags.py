@@ -43,7 +43,7 @@ def _new_min_employee(**kw):
         emp.company = kw.get("company", _MIN_COMPANY)
 
     # satisfy unrelated hooks (identity/org-role), but skip ID-scan policy
-    emp.national_code = kw.get("national_code", "1234567890")
+    emp.custom_national_code = kw.get("custom_national_code", "1234567890")
     emp.org_track     = kw.get("org_track", "Administrative")
     emp.designation   = kw.get("designation", "Truck Driver 6T")
 

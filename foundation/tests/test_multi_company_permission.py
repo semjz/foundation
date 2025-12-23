@@ -60,7 +60,7 @@ class TestEmployeeUserPermission(FrappeTestCase):
     def tearDown(self):
         frappe.set_user("Administrator")
 
-    def _new_employee(self, *, company, email, national_code=None):
+    def _new_employee(self, *, company, email, custom_national_code=None):
         emp = frappe.new_doc("Employee")
         emp.first_name = "Test"
         emp.company = company
@@ -68,8 +68,8 @@ class TestEmployeeUserPermission(FrappeTestCase):
         emp.org_track = "Administrative"
         emp.designation = "Truck Driver 6T"
 
-        # give each employee a unique national_code (satisfies your identity hook)
-        emp.national_code = national_code or _digits(10)
+        # give each employee a unique custom_national_code (satisfies your identity hook)
+        emp.custom_national_code = custom_national_code or _digits(10)
 
         # speed/escape hatches
         emp.flags.ignore_mandatory = True     # bypass unrelated schema mandatories
@@ -104,7 +104,7 @@ class TestEmployeeUserPermission(FrappeTestCase):
                 )
             )
 
-            # Another employee in Company B (different national_code)
+            # Another employee in Company B (different custom_national_code)
             email_b = f"{_rand(6)}@example.com"
             emp_b = self._new_employee(company=self.company_b, email=email_b)
 

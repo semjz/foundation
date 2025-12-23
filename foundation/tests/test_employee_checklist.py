@@ -40,12 +40,12 @@ class TestEmployeeChecklist(FrappeTestCase):
 
     def test_checklist_updates_on_file_events(self):
         # Create a minimal-but-valid Employee so your hooks pass:
-        # - identity hook needs national_code
+        # - identity hook needs custom_national_code
         # - org-role hook needs org_track + designation
         emp = frappe.get_doc({
             "doctype": "Employee",
             "employee_name": "Test Emp",
-            "national_code": "1234567890",
+            "custom_national_code": "1234567890",
             "org_track": "Administrative",
             "designation": "Truck Driver 6T",
         })
