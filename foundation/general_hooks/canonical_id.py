@@ -34,21 +34,6 @@ def get_ss_from_territory(territory_name: str) -> str:
     return ss_code
 
 
-def get_simple_serial(doctype: str) -> str:
-    """
-    SUPER simple serial:
-    - Just count how many records of this doctype already exist
-      with this SS+T prefix and add 1.
-    - No extra DocTypes, no fancy counters.
-    """
-
-    existing_count = frappe.db.count(
-        doctype
-    )
-
-    new_number = existing_count + 1
-    return f"{new_number:05d}"  # zero-pad to 5 digits
-
 
 def set_canonical_id(doc, method=None):
     """
@@ -68,7 +53,7 @@ def set_canonical_id(doc, method=None):
         # not a managed entity type
         return
 
-    territory_name = doc.TERRITORY
+    territory_name = doc.custom_territory
     if not territory_name:
         frappe.throw(f"Territory is required to generate Canonical ID for {doctype}")
 
@@ -76,7 +61,7 @@ def set_canonical_id(doc, method=None):
     ss_code = get_ss_from_territory(territory_name)
 
     # 2) NNNNN based on how many existing records share this SS + T prefix
-    serial_str = get_simple_serial(doctype, ss_code, entity_type)
+    serial_str = doc.custom_sepidar_code
 
     # 3) Final canonical ID (no K for now)
     doc.custom_canonical_id = f"{ss_code}-{entity_type}-{serial_str}"

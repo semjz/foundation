@@ -1,8 +1,6 @@
 import frappe
 
 def execute():
-    parent = "All Territories"
-
     terrs = [
         ("Mashhad", "MS"),
         ("Qazvin", "QZ"),
@@ -14,24 +12,27 @@ def execute():
         ("Chalous", "CH"),
     ]
 
-    # ensure parent exists
-    if not frappe.db.exists("Territory", parent):
-        frappe.get_doc({
-            "doctype": "Territory",
-            "territory_name": parent,
-            "is_group": 1,
-        }).insert()
-
     for name, ss in terrs:
-        if not frappe.db.exists("Territory", name):
-            doc = frappe.get_doc({
+        if frappe.db.exists("Territory", name):
+            # Convert existing territory to a ROOT node
+            frappe.db.set_value(
+                "Territory",
+                name,
+                {
+                    "parent_territory": "",
+                    "is_group": 0,
+                },
+            )
+        else:
+            # Create as root territory with no parent
+            frappe.get_doc({
                 "doctype": "Territory",
                 "territory_name": name,
-                "parent_territory": parent,
+                "parent_territory": "",
                 "is_group": 0,
-            })
-            doc.insert()
+            }).insert()
 
+        # Ensure SS Code exists for this territory
         if not frappe.db.exists("Territory SS Code", {"territory": name}):
             frappe.get_doc({
                 "doctype": "Territory SS Code",
