@@ -7,10 +7,6 @@ app_license = "mit"
 
 required_apps = ["erpnext"]
 
-override_doctype_class = {
-    "Employee": "foundation.overrides.employee_master.EmployeeMaster",
-}
-
 
 doc_events = {
     "Employee": {
