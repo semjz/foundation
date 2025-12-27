@@ -14,5 +14,4 @@ foundation.patches.v1_0.customer_hide_all_except_keep
 foundation.patches.v1_0.normalize_gender_master
 foundation.patches.v1_1.remove_old_employee_custom_fields
 foundation.patches.v1_1.set_employee_naming_to_number
-
-
+foundation.patches.v1_1.fix_employee_core_fields
