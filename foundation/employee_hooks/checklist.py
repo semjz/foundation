@@ -14,7 +14,7 @@ P_EDU  = [r"مدرک", r"تحصیلی", r"\bdegree\b", r"\bdiploma\b", r"\bcerti
 P_CON  = [r"قرارداد", r"\bcontract\b", r"\bsigned\b"]
 
 CHECKLIST_DT = "Employee Checklist"          # your checklist doctype name
-CHECKLIST_EMP_LINK_FLD = "custom_employee"   # your actual link field to Employee
+CHECKLIST_EMP_LINK_FLD = "employee"   # your actual link field to Employee
 
 # Map logical flags -> your actual custom_* fields on Employee Checklist
 FLAG_FIELD_MAP = {

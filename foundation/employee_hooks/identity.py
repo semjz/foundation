@@ -4,15 +4,13 @@ import frappe
 from frappe import _
 
 NAT_ID_FIELD = "custom_national_code"
-OLD_NAT_ID_FIELD = "national_code"
 
 
-def _normalize_nat(x: str) -> str:
-    return re.sub(r"\D+", "", x or "")
+
 
 def enforce_business_keys(doc, method=None):
     """Normalize nat_id, enforce mandatory, enforce uniqueness on create."""
-    nat = _normalize_nat(doc.get(NAT_ID_FIELD))
+    nat = doc.get(NAT_ID_FIELD)
     doc.set(NAT_ID_FIELD, nat)
 
     if not nat:
@@ -23,7 +21,7 @@ def enforce_business_keys(doc, method=None):
 
 def recheck_uniqueness(doc, method=None):
     """Re-normalize and re-check uniqueness during validate (pre-insert edits)."""
-    nat = _normalize_nat(doc.get(NAT_ID_FIELD))
+    nat = doc.get(NAT_ID_FIELD)
     doc.set(NAT_ID_FIELD, nat)
 
     if not nat:

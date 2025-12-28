@@ -15,3 +15,4 @@ foundation.patches.v1_0.normalize_gender_master
 foundation.patches.v1_1.remove_old_employee_custom_fields
 foundation.patches.v1_1.set_employee_naming_to_number
 foundation.patches.v1_1.fix_employee_core_fields
+foundation.patches.v1_2.ensure_ops_manager_and_finance_roles

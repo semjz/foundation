@@ -1,3 +1,7 @@
+# ------------------------------------------------------------
+# App Meta
+# ------------------------------------------------------------
+
 app_name = "foundation"
 app_title = "Foundation"
 app_publisher = "Saman Malakjan"
@@ -5,8 +9,41 @@ app_description = "This app is the foundation and should be installed before all
 app_email = "saman.malakjan@gmail.com"
 app_license = "mit"
 
+# Ensure ERPNext is installed before this app
 required_apps = ["erpnext"]
 
+
+# ------------------------------------------------------------
+# Constants / Shared Config
+# ------------------------------------------------------------
+
+# Core doctypes that this app customizes
+edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales Invoice"]
+
+# Roles we care about as fixtures
+# NOTE: include both "Ops Manger" and "Ops Manager" to be safe while you migrate naming.
+role_names = [
+    "Customer",
+    "Employee",
+    "Ops Manager",  # correct spelling
+    "Finance",
+    "Letter Generator",
+]
+
+
+# ------------------------------------------------------------
+# Client Scripts
+# ------------------------------------------------------------
+
+doctype_js = {
+    # Hide naming_series on Employee form (ensure the file exists in this path)
+    "Employee": "public/js/employee_hide_series.js",
+}
+
+
+# ------------------------------------------------------------
+# Doc Events
+# ------------------------------------------------------------
 
 doc_events = {
     "Employee": {
@@ -14,17 +51,17 @@ doc_events = {
             "foundation.employee_hooks.identity.enforce_business_keys",
             "foundation.employee_hooks.numbering.assign_employee_display_number",
             "foundation.employee_hooks.org_role.require_org_role_fields",
-            "foundation.general_hooks.canonical_id.set_canonical_id"
+            "foundation.general_hooks.canonical_id.set_canonical_id",
         ],
         "validate": [
             "foundation.employee_hooks.org_role.require_org_role_fields",
             "foundation.employee_hooks.identity.recheck_uniqueness",
             "foundation.employee_hooks.payroll.compute_payroll_flags",
-            "foundation.jalali_hooks.conversion.employee_validate"
+            "foundation.jalali_hooks.conversion.employee_validate",
         ],
         "before_save": [
             "foundation.employee_hooks.immutability.lock_immutable_identifiers",
-            # "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy"
+            # "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy",
         ],
         "after_insert": [
             "foundation.employee_hooks.create_user.create_user_and_permission",
@@ -34,15 +71,14 @@ doc_events = {
     "Customer": {
         "before_insert": "foundation.general_hooks.canonical_id.set_canonical_id",
         "after_insert": [
-                         "foundation.customer_hooks.portal.ensure_user_and_permission",
-                         "foundation.customer_hooks.customer_qr.ensure_customer_qr_code" 
-                         ],
+            "foundation.customer_hooks.portal.ensure_user_and_permission",
+            "foundation.customer_hooks.customer_qr.ensure_customer_qr_code",
+        ],
         "validate": [
             "foundation.customer_hooks.customer_business_rules.validate_customer_business_rules",
-            # "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules"
-            ],
-        "on_update": "foundation.customer_hooks.customer_qr.ensure_customer_qr_code"
-
+            # "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules",
+        ],
+        "on_update": "foundation.customer_hooks.customer_qr.ensure_customer_qr_code",
     },
     "File": {
         "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
@@ -51,45 +87,72 @@ doc_events = {
     },
 }
 
-edited_core_doctypes = ["Employee", "Customer", "Company", "Contract", "Sales Invoice"]
+
+# ------------------------------------------------------------
+# Fixtures
+# ------------------------------------------------------------
+# WARNING:
+# - Custom Field / Property Setter / Custom DocPerm for edited_core_doctypes
+#   will be applied on every migrate. Clean bad ones BEFORE export-fixtures.
+# - Workspace / Gender fixtures will override manual changes on other sites.
 
 fixtures = [
+    # All Workspaces (consider adding filters later if you want only your own)
     "Workspace",
-    "Gender",
+
+    # Custom Fields for edited core doctypes
     {
         "dt": "Custom Field",
         "filters": [
             ["dt", "in", edited_core_doctypes],
         ],
     },
+
+    # Property Setters for edited core doctypes
     {
         "dt": "Property Setter",
         "filters": [
             ["doc_type", "in", edited_core_doctypes],
         ],
     },
+
+    # Custom DocPerm (permissions overrides) for edited core doctypes
     {
         "dt": "Custom DocPerm",
         "filters": [
             ["parent", "in", edited_core_doctypes],
         ],
     },
+
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            ["role", "=", "CEO"],
+        ],
+    },
+
+
+    # Client Scripts bound to edited core doctypes
     {
         "dt": "Client Script",
         "filters": [
             ["dt", "in", edited_core_doctypes],
         ],
     },
+
+    # Server Scripts bound to edited core doctypes
     {
         "dt": "Server Script",
         "filters": [
             ["reference_doctype", "in", edited_core_doctypes],
         ],
     },
+
+    # Roles used by this app
     {
         "dt": "Role",
         "filters": [
-            ["role_name", "in", ["Customer", "Employee"]],
+            ["role_name", "in", role_names],
         ],
     },
 ]

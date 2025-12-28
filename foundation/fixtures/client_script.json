@@ -1,13 +1,1 @@
-[
- {
-  "docstatus": 0,
-  "doctype": "Client Script",
-  "dt": "Employee",
-  "enabled": 1,
-  "modified": "2025-12-27 15:36:08.724192",
-  "module": null,
-  "name": "Hide Naming Series",
-  "script": "frappe.ui.form.on(\"Employee\", {\n  refresh(frm) {\n    // Run AFTER other scripts / ajax changes\n    frappe.after_ajax(() => {\n      setTimeout(() => {\n        const f = frm.fields_dict.naming_series;\n        if (!f) return;\n\n        // Make absolutely sure it's not required or visible\n        frm.set_df_property(\"naming_series\", \"reqd\", 0);\n        frm.set_df_property(\"naming_series\", \"hidden\", 1);\n        frm.toggle_display(\"naming_series\", false);\n\n        // Extra paranoia: nuke wrapper display\n        if (f.wrapper) {\n          f.wrapper.style.display = \"none\";\n        }\n\n        console.log(\"Final hide naming_series applied for:\", frm.doc.name);\n      }, 300);  // small delay so this wins after other refresh handlers\n    });\n  },\n});\n",
-  "view": "Form"
- }
-]
+[]

@@ -6,7 +6,6 @@ DOCTYPE = "Employee"
 # Fields to KEEP visible (hidden = 0). Everything else => hidden = 1
 KEEP = {
     "first_name",
-    "middle_name",
     "last_name",
     "custom_father_name",
     "gender",
