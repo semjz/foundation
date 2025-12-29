@@ -61,13 +61,15 @@ KEEP_BREAK = {
     "custom_emergency_contact_info",# Section
     "custom_employement_details",# Section
     "custom_contract_info",# Section
-    "bank_details_section"# Section
+    "bank_details_section",# Section
+    "custom_education_info",# Section
+    "basic_details_tab",
+    "custom_additional_information"
 }
 
 # Layout fields should not be hidden (it breaks the form layout)
 SKIP_FIELDTYPES = {
     "Column Break",
-    "Tab Break",
     "HTML",
     "Fold",
     "Heading",

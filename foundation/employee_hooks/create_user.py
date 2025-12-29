@@ -39,7 +39,8 @@ def create_user_and_permission(doc, method=None):
         user.flags.ignore_permissions = True
         user.insert()
         user_name = user.name
-
+    
+        
     # 5) Link user to employee (only if field exists and not already set)
     if doc.meta.has_field("user_id"):
         if not doc.user_id:
@@ -49,6 +50,8 @@ def create_user_and_permission(doc, method=None):
             f"Field user_id not found on Employee for {doc.name}",
             "create_user_and_permission",
         )
+
+
 
     # 6) Only create permission if company is present
     if doc.company:
@@ -64,7 +67,8 @@ def create_user_and_permission(doc, method=None):
                 "for_value": doc.company,
                 "apply_to_all_doctypes": 1
             })
-            perm.insert(ignore_permissions=True)
+            perm.flags.ignore_permissions = True
+            perm.insert()
     else:
         frappe.log_error(
             f"No company for Employee {doc.name}, skipping User Permission",
