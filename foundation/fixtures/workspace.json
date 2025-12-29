@@ -17881,7 +17881,7 @@
  },
  {
   "charts": [],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Employees\"}}]",
+  "content": "[{\"id\":\"64ep5aMWLV\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Employees</span>\",\"col\":12}},{\"id\":\"2z7Bxb2vwI\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Employee\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -17892,7 +17892,7 @@
   "is_hidden": 0,
   "label": "Employees",
   "links": [],
-  "modified": "2025-12-29 07:41:13.420383",
+  "modified": "2025-12-29 11:32:37.155869",
   "module": "HR",
   "name": "Employees",
   "number_cards": [],
@@ -17904,8 +17904,8 @@
   "sequence_id": 16.0,
   "shortcuts": [
    {
-    "color": null,
-    "doc_view": "",
+    "color": "Grey",
+    "doc_view": "List",
     "format": null,
     "icon": null,
     "kanban_board": null,
@@ -17916,7 +17916,7 @@
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
-    "stats_filter": null,
+    "stats_filter": "[]",
     "type": "DocType",
     "url": null
    }
