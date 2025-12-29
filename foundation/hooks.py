@@ -12,7 +12,6 @@ app_license = "mit"
 # Ensure ERPNext is installed before this app
 required_apps = ["erpnext"]
 
-
 # ------------------------------------------------------------
 # Constants / Shared Config
 # ------------------------------------------------------------
@@ -44,6 +43,11 @@ doctype_js = {
 # ------------------------------------------------------------
 # Doc Events
 # ------------------------------------------------------------
+
+standard_queries = {
+    "Territory": "foundation.territory_hooks.query.territory_link_query",
+}
+
 
 doc_events = {
     "Employee": {

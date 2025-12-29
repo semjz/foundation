@@ -62,11 +62,6 @@ KEEP_BREAK = {
     "custom_employement_details",# Section
     "custom_contract_info",# Section
     "bank_details_section"# Section
-    "basic_details_tab",
-    "custom_employement_info",
-    "custom_company",
-    "custom_payroll_info",
-    "custom_bank_info"
 }
 
 # Layout fields should not be hidden (it breaks the form layout)

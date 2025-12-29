@@ -12,8 +12,8 @@
   "is_hidden": 0,
   "label": "Contracts",
   "links": [],
-  "modified": "2025-12-25 00:23:40.477283",
-  "module": null,
+  "modified": "2025-12-29 07:41:03.858049",
+  "module": "CRM",
   "name": "Contracts",
   "number_cards": [],
   "parent_page": "CRM",
@@ -12691,7 +12691,7 @@
   "hide_custom": 0,
   "icon": "users",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Recruitment",
   "links": [
    {
@@ -13001,7 +13001,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:48.235161",
+  "modified": "2025-12-29 07:41:54.829669",
   "module": "HR",
   "name": "Recruitment",
   "number_cards": [],
@@ -13102,7 +13102,7 @@
   "hide_custom": 0,
   "icon": "assign",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Employee Lifecycle",
   "links": [
    {
@@ -13628,7 +13628,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:48.371919",
+  "modified": "2025-12-29 07:41:51.411797",
   "module": "HR",
   "name": "Employee Lifecycle",
   "number_cards": [],
@@ -13753,7 +13753,7 @@
   "hide_custom": 1,
   "icon": "milestone",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Shift & Attendance",
   "links": [
    {
@@ -14153,7 +14153,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:48.800407",
+  "modified": "2025-12-29 07:41:42.981962",
   "module": "HR",
   "name": "Shift & Attendance",
   "number_cards": [],
@@ -14262,7 +14262,7 @@
   "hide_custom": 0,
   "icon": "non-profit",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Leaves",
   "links": [
    {
@@ -14590,7 +14590,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:49.251184",
+  "modified": "2025-12-29 07:41:34.099107",
   "module": "HR",
   "name": "Leaves",
   "number_cards": [],
@@ -14648,7 +14648,7 @@
   "hide_custom": 0,
   "icon": "star",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Performance",
   "links": [
    {
@@ -14958,7 +14958,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:48.593551",
+  "modified": "2025-12-29 07:41:47.645654",
   "module": "HR",
   "name": "Performance",
   "number_cards": [],
@@ -15041,7 +15041,7 @@
   "hide_custom": 1,
   "icon": "expenses",
   "indicator_color": null,
-  "is_hidden": 0,
+  "is_hidden": 1,
   "label": "Expense Claims",
   "links": [
    {
@@ -15495,7 +15495,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-12-22 17:13:48.955023",
+  "modified": "2025-12-29 07:41:38.606642",
   "module": "HR",
   "name": "Expense Claims",
   "number_cards": [],
@@ -17892,8 +17892,8 @@
   "is_hidden": 0,
   "label": "Employees",
   "links": [],
-  "modified": "2025-12-22 17:17:02.118297",
-  "module": null,
+  "modified": "2025-12-29 07:41:13.420383",
+  "module": "HR",
   "name": "Employees",
   "number_cards": [],
   "parent_page": "HR",
@@ -17925,7 +17925,7 @@
  },
  {
   "charts": [],
-  "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Customers\"}}]",
+  "content": "[{\"id\":\"qNAhdItY6D\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Customers</span>\",\"col\":12}},{\"id\":\"QS39FOL8LC\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -17936,8 +17936,8 @@
   "is_hidden": 0,
   "label": "Customers",
   "links": [],
-  "modified": "2025-12-22 17:16:28.496377",
-  "module": null,
+  "modified": "2025-12-29 07:59:23.041728",
+  "module": "HR",
   "name": "Customers",
   "number_cards": [],
   "parent_page": "HR",
@@ -17948,8 +17948,8 @@
   "sequence_id": 33.0,
   "shortcuts": [
    {
-    "color": null,
-    "doc_view": "",
+    "color": "Grey",
+    "doc_view": "List",
     "format": null,
     "icon": null,
     "kanban_board": null,
@@ -17960,7 +17960,7 @@
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
-    "stats_filter": null,
+    "stats_filter": "[]",
     "type": "DocType",
     "url": null
    }
