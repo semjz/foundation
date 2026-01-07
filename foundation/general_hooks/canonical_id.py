@@ -42,6 +42,7 @@ def set_canonical_id(doc, method=None):
     - uses Territory -> Territory SS Code -> ss_code
     - generates: SS-T-NNNNN
     """
+    
 
     # don't overwrite if it's already set (e.g. data import)
     if doc.custom_canonical_id:

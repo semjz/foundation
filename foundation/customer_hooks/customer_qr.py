@@ -12,7 +12,7 @@ def ensure_customer_qr_code(doc, method=None):
 
     # Generate QR image in memory
     qr = qrcode.QRCode(border=2)
-    qr.add_data(doc.canonical_id)
+    qr.add_data(doc.custom_canonical_id)
     qr.make(fit=True)
     img = qr.make_image()
 

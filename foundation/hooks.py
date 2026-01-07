@@ -12,6 +12,17 @@ app_license = "mit"
 # Ensure ERPNext is installed before this app
 required_apps = ["erpnext"]
 
+
+# ------------------------------------------------------------
+# overides
+# ------------------------------------------------------------
+
+
+override_doctype_class = {
+    "Customer": "foundation.overrides.customer.Customer",
+}
+
+
 # ------------------------------------------------------------
 # Constants / Shared Config
 # ------------------------------------------------------------
@@ -52,20 +63,14 @@ standard_queries = {
 doc_events = {
     "Employee": {
         "before_insert": [
-            "foundation.employee_hooks.identity.enforce_business_keys",
-            "foundation.employee_hooks.numbering.assign_employee_display_number",
-            "foundation.employee_hooks.org_role.require_org_role_fields",
             "foundation.general_hooks.canonical_id.set_canonical_id",
         ],
         "validate": [
-            "foundation.employee_hooks.org_role.require_org_role_fields",
-            "foundation.employee_hooks.identity.recheck_uniqueness",
             "foundation.employee_hooks.payroll.compute_payroll_flags",
             "foundation.jalali_hooks.conversion.employee_validate",
         ],
         "before_save": [
-            "foundation.employee_hooks.immutability.lock_immutable_identifiers",
-            # "foundation.employee_hooks.id_scan.enforce_employee_national_id_attachment_policy",
+            "foundation.employee_hooks.immutability.lock_immutable_identifiers"
         ],
         "after_insert": [
             "foundation.employee_hooks.create_user.create_user_and_permission",
@@ -73,14 +78,12 @@ doc_events = {
         ],
     },
     "Customer": {
-        "before_insert": "foundation.general_hooks.canonical_id.set_canonical_id",
         "after_insert": [
             "foundation.customer_hooks.portal.ensure_user_and_permission",
             "foundation.customer_hooks.customer_qr.ensure_customer_qr_code",
         ],
         "validate": [
             "foundation.customer_hooks.customer_business_rules.validate_customer_business_rules",
-            # "foundation.customer_hooks.customer_tier_rules.enforce_customer_tier_rules",
         ],
         "on_update": "foundation.customer_hooks.customer_qr.ensure_customer_qr_code",
     },
@@ -89,6 +92,9 @@ doc_events = {
         "after_insert": "foundation.employee_hooks.checklist.file_after_insert",
         "after_delete": "foundation.employee_hooks.checklist.file_after_delete",
     },
+    "User": {
+        "validate": "foundation.user_hooks.username.set_username_from_mobile",
+    }
 }
 
 

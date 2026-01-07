@@ -4,7 +4,6 @@
  "app": "foundation",
  "creation": "2025-11-19 18:13:48.626493",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
   "section_break_s6ga",
@@ -32,7 +31,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-11-19 18:29:45.760025",
+ "modified": "2026-01-03 17:08:08.597627",
  "modified_by": "Administrator",
  "module": "foundation",
  "name": "Medical Packaging Row",

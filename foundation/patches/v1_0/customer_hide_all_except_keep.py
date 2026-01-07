@@ -8,7 +8,6 @@ KEEP = {
     "territory",
     "customer_name",
     "customer_type",
-    "canonical_id",
     "custom_customer_code",
     "custom_tier",
     "custom_legal_form",

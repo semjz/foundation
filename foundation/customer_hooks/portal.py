@@ -15,7 +15,7 @@ def _get_email(doc):
 def _generate_dummy_email(doc):
     """Generate a deterministic dummy email for this customer."""
     # Prefer a stable, unique field
-    base = doc.get("canonical_id")
+    base = doc.get("custom_canonical_id")
     # Remove spaces just to be safe
     base = str(base).replace(" ", "")
     return f"cust-{base}@dummy.local"
