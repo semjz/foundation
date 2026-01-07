@@ -17,4 +17,4 @@ foundation.patches.v1_1.fix_employee_core_fields
 foundation.patches.v1_2.ensure_ops_manager_and_finance_roles
 foundation.patches.v1_2.normalize_base_territories
 foundation.patches.v1_2.customer_autoname_canonical_id
-foundation.patches.v1_3.set_username_from_mobile
+foundation.patches.v1_3.enable_mobile_login_using_mobile_no

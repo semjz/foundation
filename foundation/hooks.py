@@ -91,9 +91,6 @@ doc_events = {
         "before_insert": "foundation.file_hooks.national_id_scan.apply_employee_national_id_file_policy_on_create",
         "after_insert": "foundation.employee_hooks.checklist.file_after_insert",
         "after_delete": "foundation.employee_hooks.checklist.file_after_delete",
-    },
-    "User": {
-        "validate": "foundation.user_hooks.username.set_username_from_mobile",
     }
 }
 
